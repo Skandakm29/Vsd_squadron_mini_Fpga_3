@@ -5,7 +5,7 @@
 This module implements an **8N1 UART Transmitter**, enabling serial data transmission using an **8-bit data frame, no parity bit, and 1 stop bit**. It generates a **9600 baud clock** from a 12 MHz oscillator and provides a simple state-machine-based transmission mechanism.The code for this module can accessed [here](https://github.com/Skandakm29/Vsd_squadron_mini_Fpga_3/blob/main/uart_trx.v).
 
 
-**Step 1:Study the Existing Code**
+**Study the Existing Code**
 <details>
   
 <summary> Understanding the code</summary>
@@ -53,3 +53,19 @@ The `uart_tx_8n1` module implements a simple **UART transmitter** using a **fini
   - In **STATE_TXDONE**, it:
   - Sets txdone = 1 (**indicates transmission complete**).
   - Returns to **STATE_IDLE**.
+</details>
+
+## **System Architecture** 
+
+<details>
+
+<summary> Block diagram</summary>
+
+</details>
+
+<details>
+  
+<summary> Circuit diagram</summary>
+
+</details>
+
