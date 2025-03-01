@@ -10,12 +10,15 @@ This module implements an **8N1 UART Transmitter**, enabling serial data transmi
   
 <summary> Understanding the code</summary>
 
-### Top Module
-The `top` module integrates the UART transmission logic with an internal **12 MHz oscillator** and an **RGB LED driver**.
+### **Top Module**
+The `top` module integrates the UART transmission logic with an internal **12 MHz oscillator**, a **baud rate generator**, and an **RGB LED driver**.
 
-- **Clock Generation:** Uses an internal oscillator to generate a **9600 Hz clock**.
-- **UART Transmission:** Transmits the character `D` continuously.
-- **LED Control:** The RGB LEDs toggle based on the internal frequency counter.
+- **Clock Generation:** Uses an internal oscillator running at **12 MHz** to generate a **9600 Hz clock** via a **clock divider**.
+- **Clock Division:** The 12 MHz clock is divided by **1250** to produce a **9600 Hz clock**. Since a clock signal toggles every half-period, it is toggled every **625 cycles** to achieve an accurate **baud rate** for UART transmission.
+- **UART Transmission:** The **UART transmitter (`uart_tx_8n1`)** continuously sends the character `'D'` using an **8N1 format** (8 data bits, No parity, 1 stop bit).
+- **LED Control:** The RGB LEDs toggle based on the **internal frequency counter**, creating a blinking pattern based on specific bits of the counter.
+
+This module ensures **accurate timing for UART communication** by properly generating the required baud clock, while also controlling **visual indicators** via LED toggling.
 
 ### `uart_tx_8n1` Module
 The `uart_tx_8n1` module implements a simple **UART transmitter** using a **finite state machine (FSM)** with the following states:
