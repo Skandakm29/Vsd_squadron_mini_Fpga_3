@@ -64,8 +64,9 @@ The `uart_tx_8n1` module implements a simple **UART transmitter** using a **fini
 </details>
 
 <details>
-  
-<summary> Circuit diagram</summary>
+  <summary> Circuit diagram</summary>
+
+  ![Circuit diagram](https://github.com/user-attachments/assets/d52e18ef-c421-4163-a42b-85cfb44e8397)
 
 </details>
 
