@@ -10,7 +10,7 @@ This module implements an **8N1 UART Transmitter**, enabling serial data transmi
   
 <summary> Understanding the code</summary>
 
-### `top` Module
+### Top Module
 The `top` module integrates the UART transmission logic with an internal **12 MHz oscillator** and an **RGB LED driver**.
 
 - **Clock Generation:** Uses an internal oscillator to generate a **9600 Hz clock**.
@@ -20,6 +20,12 @@ The `top` module integrates the UART transmission logic with an internal **12 MH
 ### `uart_tx_8n1` Module
 The `uart_tx_8n1` module implements a simple **UART transmitter** using a **finite state machine (FSM)** with the following states:
 
+#### **Baud Rate Generator**
+The baud rate generator derives a **9600 baud clock** from a **12 MHz input clock** using a counter-based approach.
+
+- A **counter** increments on every rising edge of the **12 MHz clock**.
+- When the counter reaches **1249**, it resets and toggles the **baud clock enable** signal.
+- This effectively generates a **9600 Hz clock**.
 #### **State Machine States**
 
 - **IDLE STATE (STATE_IDLE)**
@@ -61,6 +67,9 @@ The `uart_tx_8n1` module implements a simple **UART transmitter** using a **fini
 
 <summary> Block diagram</summary>
 
+  ![Block diagram](https://github.com/user-attachments/assets/9c0cb07d-d1c9-4dab-aaeb-d002b9b3e716)
+
+
 </details>
 
 <details>
@@ -69,4 +78,30 @@ The `uart_tx_8n1` module implements a simple **UART transmitter** using a **fini
   ![Circuit diagram](https://github.com/user-attachments/assets/d52e18ef-c421-4163-a42b-85cfb44e8397)
 
 </details>
+
+## **Synthesis & Programming** 
+<details>
+  <summary>Testing and Output</summary>
+
+## **Clone & Setup Repository**
+```bash
+git clone https://github.com/Skandakm29/Vsd_squadron_mini_Fpga_3.git
+cd "Vsd_squadron_mini_Fpga_3"
+```
+
+###  Build the Bitstream
+```bash
+make build
+```
+ Generates top.bin for the FPGA.
+
+###  **Flash to FPGA**
+```bash
+sudo make flash
+```
+Uploads the bitstream to the FPGA.
+### **UART Testing**
+```bash
+sudo make terminal
+```
 
