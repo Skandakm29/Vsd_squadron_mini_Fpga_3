@@ -5,7 +5,7 @@
 This module implements an **8N1 UART Transmitter**, enabling serial data transmission using an **8-bit data frame, no parity bit, and 1 stop bit**. It generates a **9600 baud clock** from a 12 MHz oscillator and provides a simple state-machine-based transmission mechanism.The code for this module can accessed [here](https://github.com/Skandakm29/Vsd_squadron_mini_Fpga_3/blob/main/uart_trx.v).
 
 
-**Study the Existing Code**
+## **Study the Existing Code**
 <details>
   
 <summary> Understanding the code</summary>
@@ -104,4 +104,14 @@ Uploads the bitstream to the FPGA.
 ```bash
 sudo make terminal
 ```
+</details>
+
+## **UART Transmission Showcase**
+
+<details>
+  <summary>Demo Video</summary>
+
+[![Watch the Demo](https://github.com/user-attachments/assets/2e41d50e-7fb5-4c2e-9296-9f6e4c054e18)](https://github.com/user-attachments/assets/2e41d50e-7fb5-4c2e-9296-9f6e4c054e18)
+
+</details>
 
