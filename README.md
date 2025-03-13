@@ -5,10 +5,10 @@
 This module implements an **8N1 UART Transmitter**, enabling serial data transmission using an **8-bit data frame, no parity bit, and 1 stop bit**. It generates a **9600 baud clock** from a 12 MHz oscillator and provides a simple state-machine-based transmission mechanism.The code for this module can accessed [here](https://github.com/Skandakm29/Vsd_squadron_mini_Fpga_3/blob/main/uart_trx.v).
 
 
-## **Study the Existing Code**
-<details>
+## **1.Study the Existing Code**
+
   
-<summary> Understanding the code</summary>
+## Understanding the code
 
 ### **Top Module**
 The `top` module integrates the UART transmission logic with an internal **12 MHz oscillator**, a **baud rate generator**, and an **RGB LED driver**.
@@ -62,29 +62,24 @@ The baud rate generator derives a **9600 baud clock** from a **12 MHz input cloc
   - In **STATE_TXDONE**, it:
   - Sets txdone = 1 (**indicates transmission complete**).
   - Returns to **STATE_IDLE**.
-</details>
 
-## **System Architecture** 
 
-<details>
+## **2.System Architecture** 
 
-<summary> Block diagram</summary>
+
+## Block diagram
 
   ![Block diagram](https://github.com/user-attachments/assets/9c0cb07d-d1c9-4dab-aaeb-d002b9b3e716)
 
-
-</details>
-
-<details>
-  <summary> Circuit diagram</summary>
+## Circuit diagram
 
   ![Circuit diagram](https://github.com/user-attachments/assets/d52e18ef-c421-4163-a42b-85cfb44e8397)
 
-</details>
 
-## **Synthesis & Programming** 
-<details>
-  <summary>Testing and Output</summary>
+
+## **3.Synthesis & Programming** 
+
+## Testing and Output
 
 ## **Clone & Setup Repository**
 ```bash
@@ -107,12 +102,11 @@ Uploads the bitstream to the FPGA.
 ```bash
 sudo make terminal
 ```
-</details>
 
-## **UART Transmission Showcase**
+## **4.UART Transmission Showcase**
 
-<details>
-  <summary>Demo Video</summary>
+
+## Demo Video
 
 [![Watch the Demo](https://github.com/user-attachments/assets/2e41d50e-7fb5-4c2e-9296-9f6e4c054e18)](https://github.com/user-attachments/assets/2e41d50e-7fb5-4c2e-9296-9f6e4c054e18)
 
